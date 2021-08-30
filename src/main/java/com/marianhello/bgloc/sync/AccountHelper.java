@@ -21,7 +21,7 @@ public class AccountHelper {
         Account account = new Account(accountName, accountType);
         Log.e(TAG, "*********************************************************");
         if (account != null) {
-            Log.e(TAG, account.toString()):
+            Log.e(TAG, account.toString());
         }
         // Get an instance of the Android account manager
         AccountManager accountManager =  (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
