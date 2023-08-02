@@ -449,10 +449,12 @@ public class DistanceFilterLocationProvider extends AbstractLocationProvider imp
         @Override
         public void onReceive(Context context, Intent intent) {
             String key = LocationManager.KEY_LOCATION_CHANGED;
-            Location location = (Location)intent.getExtras().get(key);
-            if (location != null) {
-                logger.debug("Single location update: " + location.toString());
-                onPollStationaryLocation(location);
+            if (intent.getExtras() != null) {
+                Location location = (Location)intent.getExtras().get(key);
+                if (location != null) {
+                    logger.debug("Single location update: " + location.toString());
+                    onPollStationaryLocation(location);
+                }
             }
         }
     };
